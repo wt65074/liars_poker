@@ -1,1 +1,0 @@
-web: twistd -n web --wsgi LiarsTac.py

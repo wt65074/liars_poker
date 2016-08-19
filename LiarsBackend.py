@@ -14,6 +14,7 @@ class MultiEcho(Protocol):
 
     #filters out late connections and updates players on who is part of the game
     def connectionMade(self):
+        self.transport.write("Connected")
 
         if self.factory.gameState.state != 0:
             self.transport.loseConnection()
