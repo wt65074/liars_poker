@@ -16,7 +16,7 @@ log.msg(port)
 # create the listening socket when it is started
 gameState = GameState()
 factory = MultiEchoFactory(gameState)
-tcp_service = internet.TCPServer(port, factory, interface=iface)
+tcp_service = internet.TCPServer(port, factory)
 
 application = service.Application("liarspoker")
 
