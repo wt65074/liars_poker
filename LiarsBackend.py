@@ -79,7 +79,7 @@ class MultiEcho(Protocol):
             #id+name+pushtoken|id+name+pushtoken
             for string in data.split("|"):
                 # Save entire identification string
-                self.factory.gameState.playerList += string
+                self.factory.gameState.playerList.append(string)
 
 
 
