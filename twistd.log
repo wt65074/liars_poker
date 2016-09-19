@@ -1,321 +1,40 @@
-2016-08-21T19:32:08-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-21T19:32:09-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-21T19:32:09-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-21T19:32:09-0400 [-] Site starting on 10000
-2016-08-21T19:32:09-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x103b20320>
-2016-08-21T19:32:11-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-21T19:32:11-0400 [stdout#info] twistd --pidfile GAME_bayfrgszgsldvoucxfwmgtehmn/pidfile.pid --logfile GAME_bayfrgszgsldvoucxfwmgtehmn/logfile.log liars -p 50285
-2016-08-21T19:32:11-0400 [twisted.python.log#info] "127.0.0.1" - - [21/Aug/2016:23:32:11 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-21T19:33:50-0400 [-] Received SIGTERM, shutting down.
-2016-08-21T19:33:50-0400 [-] (TCP Port 10000 Closed)
-2016-08-21T19:33:50-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x103b20320>
-2016-08-21T19:33:50-0400 [-] Main loop terminated.
-2016-08-21T19:33:50-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-21T19:33:52-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-21T19:33:52-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-21T19:33:52-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-21T19:33:52-0400 [-] Site starting on 10000
-2016-08-21T19:33:52-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10cc93368>
-2016-08-21T19:34:12-0400 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-08-21 19:34:12,770] ERROR in app: Exception on /Game [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper\n    resp = resource(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view\n    return self.dispatch_request(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request\n    resp = meth(*args, **kwargs)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 44, in get\n    with open(config.json) as json_data_file:\nNameError: global name \'config\' is not defined\n' (unicode)
-2016-08-21T19:34:12-0400 [wsgi] [2016-08-21 19:34:12,770] ERROR in app: Exception on /Game [GET]
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
-	    rv = self.dispatch_request()
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
-	    return self.view_functions[rule.endpoint](**req.view_args)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper
-	    resp = resource(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
-	    return self.dispatch_request(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
-	    resp = meth(*args, **kwargs)
-	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 44, in get
-	    with open(config.json) as json_data_file:
-	NameError: global name 'config' is not defined
-
-2016-08-21T19:34:12-0400 [twisted.python.log#info] "127.0.0.1" - - [21/Aug/2016:23:34:12 +0000] "GET /Game HTTP/1.1" 500 37 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-21T19:34:57-0400 [-] Received SIGTERM, shutting down.
-2016-08-21T19:34:57-0400 [-] (TCP Port 10000 Closed)
-2016-08-21T19:34:57-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10cc93368>
-2016-08-21T19:34:57-0400 [-] Main loop terminated.
-2016-08-21T19:34:57-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-21T19:34:58-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-21T19:34:58-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-21T19:34:58-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-21T19:34:58-0400 [-] Site starting on 10000
-2016-08-21T19:34:58-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x11053a368>
-2016-08-21T19:35:00-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-21T19:35:00-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-21T19:35:00-0400 [stdout#info] twistd --pidfile GAME_wvwtwahvskmylfgwgimdwmscsz/pidfile.pid --logfile GAME_wvwtwahvskmylfgwgimdwmscsz/logfile.log liars -p 50327
-2016-08-21T19:35:00-0400 [twisted.python.log#info] "127.0.0.1" - - [21/Aug/2016:23:35:00 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-21T20:36:22-0400 [-] Received SIGTERM, shutting down.
-2016-08-21T20:36:22-0400 [-] (TCP Port 10000 Closed)
-2016-08-21T20:36:22-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x11053a368>
-2016-08-21T20:36:22-0400 [-] Main loop terminated.
-2016-08-21T20:36:22-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:08:23-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:08:24-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:08:24-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:08:24-0400 [-] Site starting on 10000
-2016-08-22T14:08:24-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10a9e7248>
-2016-08-22T14:08:29-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:08:29 +0000] "GET / HTTP/1.1" 404 233 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:08:31-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:08:31 +0000] "GET / HTTP/1.1" 404 233 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:08:32-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:08:32-0400 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-08-22 14:08:32,871] ERROR in app: Exception on /Game [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper\n    resp = resource(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view\n    return self.dispatch_request(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request\n    resp = meth(*args, **kwargs)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 56, in get\n    folder = data[\'storageFolder\'] + "/" + folder\nUnboundLocalError: local variable \'folder\' referenced before assignment\n' (unicode)
-2016-08-22T14:08:32-0400 [wsgi] [2016-08-22 14:08:32,871] ERROR in app: Exception on /Game [GET]
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
-	    rv = self.dispatch_request()
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
-	    return self.view_functions[rule.endpoint](**req.view_args)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper
-	    resp = resource(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
-	    return self.dispatch_request(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
-	    resp = meth(*args, **kwargs)
-	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 56, in get
-	    folder = data['storageFolder'] + "/" + folder
-	UnboundLocalError: local variable 'folder' referenced before assignment
-
-2016-08-22T14:08:32-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:08:32 +0000] "GET /Game HTTP/1.1" 500 37 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:08:33-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:08:33-0400 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-08-22 14:08:33,112] ERROR in app: Exception on /Game [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper\n    resp = resource(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view\n    return self.dispatch_request(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request\n    resp = meth(*args, **kwargs)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 56, in get\n    folder = data[\'storageFolder\'] + "/" + folder\nUnboundLocalError: local variable \'folder\' referenced before assignment\n' (unicode)
-2016-08-22T14:08:33-0400 [wsgi] [2016-08-22 14:08:33,112] ERROR in app: Exception on /Game [GET]
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
-	    rv = self.dispatch_request()
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
-	    return self.view_functions[rule.endpoint](**req.view_args)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper
-	    resp = resource(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
-	    return self.dispatch_request(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
-	    resp = meth(*args, **kwargs)
-	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 56, in get
-	    folder = data['storageFolder'] + "/" + folder
-	UnboundLocalError: local variable 'folder' referenced before assignment
-
-2016-08-22T14:08:33-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:08:32 +0000] "GET /Game HTTP/1.1" 500 37 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:09:22-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:09:22-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:09:22-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10a9e7248>
-2016-08-22T14:09:22-0400 [-] Main loop terminated.
-2016-08-22T14:09:22-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:09:24-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:09:24-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:09:24-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:09:24-0400 [-] Site starting on 10000
-2016-08-22T14:09:24-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x105f9b320>
-2016-08-22T14:09:28-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:09:28-0400 [stdout#info] twistd --pidfile GAME_nuhmjuhwmjqxhppxcihoesaesc/pidfile.pid --logfile GAME_nuhmjuhwmjqxhppxcihoesaesc/logfile.log liars -p 54064 -s /Users/wtobey/Desktop/LiarsBackend/GAME_nuhmjuhwmjqxhppxcihoesaesc
-2016-08-22T14:09:28-0400 [stdout#info] Usage: twistd [options]
-2016-08-22T14:09:28-0400 [stdout#info] Options:
-2016-08-22T14:09:28-0400 [stdout#info]   -p, --port=    The port number to listen on.
-2016-08-22T14:09:28-0400 [stdout#info]       --version  Display Twisted version and exit.
-2016-08-22T14:09:28-0400 [stdout#info]       --help     Display this help and exit.
-2016-08-22T14:09:28-0400 [stdout#info] /usr/local/bin/twistd: option -s not recognized
-2016-08-22T14:09:28-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:09:27 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-   2016-08-22T14:10:12-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:10:12-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:10:12-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x105f9b320>
-2016-08-22T14:10:12-0400 [-] Main loop terminated.
-2016-08-22T14:10:12-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:10:14-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:10:14-0400 [-] Unhandled Error
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 638, in run
-	    config.parseOptions()
-	  File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 605, in parseOptions
-	    usage.Options.parseOptions(self, options)
-	  File "/Library/Python/2.7/site-packages/twisted/python/usage.py", line 262, in parseOptions
-	    for (cmd, short, parser, doc) in self.subCommands:
-	  File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 622, in subCommands
-	    for plug in sorted(plugins, key=attrgetter('tapname')):
-	--- <exception caught here> ---
-	  File "/Library/Python/2.7/site-packages/twisted/plugin.py", line 217, in getPlugins
-	    adapted = interface(plugin, None)
-	  File "/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/zope/interface/interface.py", line 494, in _call_conform
-	    return conform(self)
-	  File "/Library/Python/2.7/site-packages/twisted/plugin.py", line 71, in __conform__
-	    return self.load()
-	  File "/Library/Python/2.7/site-packages/twisted/plugin.py", line 66, in load
-	    return namedAny(self.dropin.moduleName + '.' + self.name)
-	  File "/Library/Python/2.7/site-packages/twisted/python/reflect.py", line 300, in namedAny
-	    topLevelPackage = _importAndCheckStack(trialname)
-	  File "/Library/Python/2.7/site-packages/twisted/python/reflect.py", line 239, in _importAndCheckStack
-	    return __import__(importName)
-	  File "/Users/wtobey/Desktop/LiarsBackend/twisted/plugins/liars_plugin.py", line 6, in <module>
-	    from LiarsBackend import *
-	exceptions.IndentationError: expected an indented block (LiarsBackend.py, line 243)
-	
-2016-08-22T14:10:15-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:10:15-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:10:15-0400 [-] Site starting on 10000
-2016-08-22T14:10:15-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x102aa2b00>
-2016-08-22T14:10:54-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:10:54-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:10:54-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x102aa2b00>
-2016-08-22T14:10:54-0400 [-] Main loop terminated.
-2016-08-22T14:10:54-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:10:55-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:10:55-0400 [-] Unhandled Error
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 638, in run
-	    config.parseOptions()
-	  File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 605, in parseOptions
-	    usage.Options.parseOptions(self, options)
-	  File "/Library/Python/2.7/site-packages/twisted/python/usage.py", line 262, in parseOptions
-	    for (cmd, short, parser, doc) in self.subCommands:
-	  File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 622, in subCommands
-	    for plug in sorted(plugins, key=attrgetter('tapname')):
-	--- <exception caught here> ---
-	  File "/Library/Python/2.7/site-packages/twisted/plugin.py", line 217, in getPlugins
-	    adapted = interface(plugin, None)
-	  File "/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/zope/interface/interface.py", line 494, in _call_conform
-	    return conform(self)
-	  File "/Library/Python/2.7/site-packages/twisted/plugin.py", line 71, in __conform__
-	    return self.load()
-	  File "/Library/Python/2.7/site-packages/twisted/plugin.py", line 66, in load
-	    return namedAny(self.dropin.moduleName + '.' + self.name)
-	  File "/Library/Python/2.7/site-packages/twisted/python/reflect.py", line 300, in namedAny
-	    topLevelPackage = _importAndCheckStack(trialname)
-	  File "/Library/Python/2.7/site-packages/twisted/python/reflect.py", line 239, in _importAndCheckStack
-	    return __import__(importName)
-	  File "/Users/wtobey/Desktop/LiarsBackend/twisted/plugins/liars_plugin.py", line 6, in <module>
-	    from LiarsBackend import *
-	exceptions.IndentationError: expected an indented block (LiarsBackend.py, line 243)
-	
-2016-08-22T14:10:56-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:10:56-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:10:56-0400 [-] Site starting on 10000
-2016-08-22T14:10:56-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x111c58b00>
-2016-08-22T14:11:33-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:11:33-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:11:33-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x111c58b00>
-2016-08-22T14:11:33-0400 [-] Main loop terminated.
-2016-08-22T14:11:33-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:11:34-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:11:34-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:11:34-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:11:34-0400 [-] Site starting on 10000
-2016-08-22T14:11:34-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10324d440>
-2016-08-22T14:11:38-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:11:38-0400 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-08-22 14:11:38,988] ERROR in app: Exception on /Game [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper\n    resp = resource(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view\n    return self.dispatch_request(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request\n    resp = meth(*args, **kwargs)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 56, in get\n    folder = data[\'storageFolder\'] + "/" + newfolder\nNameError: global name \'newfolder\' is not defined\n' (unicode)
-2016-08-22T14:11:38-0400 [wsgi] [2016-08-22 14:11:38,988] ERROR in app: Exception on /Game [GET]
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
-	    rv = self.dispatch_request()
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
-	    return self.view_functions[rule.endpoint](**req.view_args)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper
-	    resp = resource(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
-	    return self.dispatch_request(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
-	    resp = meth(*args, **kwargs)
-	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 56, in get
-	    folder = data['storageFolder'] + "/" + newfolder
-	NameError: global name 'newfolder' is not defined
-	
-2016-08-22T14:11:38-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:11:38 +0000] "GET /Game HTTP/1.1" 500 37 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:11:57-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:11:57-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:11:57-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10324d440>
-2016-08-22T14:11:57-0400 [-] Main loop terminated.
-2016-08-22T14:11:57-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:11:58-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:11:58-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:11:58-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:11:58-0400 [-] Site starting on 10000
-2016-08-22T14:11:58-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x1053b4290>
-2016-08-22T14:12:05-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:12:05-0400 [stdout#info] twistd --pidfile GAME_aeprskxefecsoeqcbropjrarnx/pidfile.pid --logfile GAME_aeprskxefecsoeqcbropjrarnx/logfile.log liars -p 54303 -s /Users/wtobey/Desktop/LiarsBackend/GAME_aeprskxefecsoeqcbropjrarnx
-2016-08-22T14:12:06-0400 [stdout#info] Usage: twistd [options]
-2016-08-22T14:12:06-0400 [stdout#info] Options:
-2016-08-22T14:12:06-0400 [stdout#info]   -p, --port=    The port number to listen on.
-2016-08-22T14:12:06-0400 [stdout#info]       --version  Display Twisted version and exit.
-2016-08-22T14:12:06-0400 [stdout#info]       --help     Display this help and exit.
-2016-08-22T14:12:06-0400 [stdout#info] /usr/local/bin/twistd: option -s not recognized
-2016-08-22T14:12:06-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:12:05 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:12:23-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:12:23-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:12:23-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x1053b4290>
-2016-08-22T14:12:23-0400 [-] Main loop terminated.
-2016-08-22T14:12:23-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:12:25-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:12:25-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:12:25-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:12:25-0400 [-] Site starting on 10000
-2016-08-22T14:12:25-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x1079633f8>
-2016-08-22T14:12:29-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:12:29-0400 [stdout#info] twistd --pidfile GAME_ahrmzbimkdiwbpcevkhvkgurkj/pidfile.pid --logfile GAME_ahrmzbimkdiwbpcevkhvkgurkj/logfile.log liars -p 54347 -s /Users/wtobey/Desktop/LiarsBackend/GAME_ahrmzbimkdiwbpcevkhvkgurkj
-2016-08-22T14:12:29-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:12:28 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:14:06-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:14:06-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:14:06-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x1079633f8>
-2016-08-22T14:14:06-0400 [-] Main loop terminated.
-2016-08-22T14:14:06-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:14:08-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:14:08-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:14:08-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:14:08-0400 [-] Site starting on 10000
-2016-08-22T14:14:08-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10694a2d8>
-2016-08-22T14:14:12-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:14:12-0400 [stdout#info] twistd --pidfile GAME_qeuyksjnlhrzxmzdldqudoattq/pidfile.pid --logfile GAME_qeuyksjnlhrzxmzdldqudoattq/logfile.log liars -p 54479 -s /Users/wtobey/Desktop/LiarsBackend/GAME_qeuyksjnlhrzxmzdldqudoattq
-2016-08-22T14:14:12-0400 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-08-22 14:14:12,327] ERROR in app: Exception on /Game [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper\n    resp = resource(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view\n    return self.dispatch_request(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request\n    resp = meth(*args, **kwargs)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 60, in get\n    subprocess.call("touch players.json")\n  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 522, in call\n    return Popen(*popenargs, **kwargs).wait()\n  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 710, in __init__\n    errread, errwrite)\n  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 1335, in _execute_child\n    raise child_exception\nOSError: [Errno 2] No such file or directory\n' (unicode)
-2016-08-22T14:14:12-0400 [wsgi] [2016-08-22 14:14:12,327] ERROR in app: Exception on /Game [GET]
-	Traceback (most recent call last):
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
-	    rv = self.dispatch_request()
-	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
-	    return self.view_functions[rule.endpoint](**req.view_args)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 477, in wrapper
-	    resp = resource(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask/views.py", line 84, in view
-	    return self.dispatch_request(*args, **kwargs)
-	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
-	    resp = meth(*args, **kwargs)
-	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 60, in get
-	    subprocess.call("touch players.json")
-	  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 522, in call
-	    return Popen(*popenargs, **kwargs).wait()
-	  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 710, in __init__
-	    errread, errwrite)
-	  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/subprocess.py", line 1335, in _execute_child
-	    raise child_exception
-	OSError: [Errno 2] No such file or directory
-	
-2016-08-22T14:14:12-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:14:11 +0000] "GET /Game HTTP/1.1" 500 37 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:14:41-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:14:41-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:14:41-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10694a2d8>
-2016-08-22T14:14:41-0400 [-] Main loop terminated.
-2016-08-22T14:14:41-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:14:46-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:14:46-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:14:46-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:14:46-0400 [-] Site starting on 10000
-2016-08-22T14:14:46-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10e52a3b0>
-2016-08-22T14:14:47-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:14:47-0400 [stdout#info] twistd --pidfile GAME_urrarvyarbknrnktoumpztrjuh/pidfile.pid --logfile GAME_urrarvyarbknrnktoumpztrjuh/logfile.log liars -p 54536 -s /Users/wtobey/Desktop/LiarsBackend/GAME_urrarvyarbknrnktoumpztrjuh
-2016-08-22T14:14:48-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:14:47 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T14:15:40-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T14:15:40-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T14:15:40-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10e52a3b0>
-2016-08-22T14:15:40-0400 [-] Main loop terminated.
-2016-08-22T14:15:40-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-08-22T14:15:42-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-08-22T14:15:42-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-08-22T14:15:42-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-08-22T14:15:42-0400 [-] Site starting on 10000
-2016-08-22T14:15:42-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10a7492d8>
-2016-08-22T14:15:45-0400 [stdout#info] /Users/wtobey/Desktop/LiarsBackend
-2016-08-22T14:15:45-0400 [stdout#info] twistd --pidfile GAME_dsgqlvrnwweoashefbuzumplef/pidfile.pid --logfile GAME_dsgqlvrnwweoashefbuzumplef/logfile.log liars -p 54616 -s /Users/wtobey/Desktop/LiarsBackend/GAME_dsgqlvrnwweoashefbuzumplef
-2016-08-22T14:15:45-0400 [twisted.python.log#info] "127.0.0.1" - - [22/Aug/2016:18:15:44 +0000] "GET /Game HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12) AppleWebKit/602.1.50 (KHTML, like Gecko) Version/10.0 Safari/602.1.50"
-2016-08-22T23:27:53-0400 [-] Received SIGTERM, shutting down.
-2016-08-22T23:27:53-0400 [-] (TCP Port 10000 Closed)
-2016-08-22T23:27:53-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10a7492d8>
-2016-08-22T23:27:53-0400 [-] Main loop terminated.
-2016-08-22T23:27:53-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-09-17T02:36:29-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-09-17T02:36:29-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-09-17T02:36:29-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-09-17T02:36:29-0400 [-] Site starting on 8080
+2016-09-17T02:36:29-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10783f560>
+2016-09-17T02:42:32-0400 [-] Received SIGTERM, shutting down.
+2016-09-17T02:42:32-0400 [-] (TCP Port 8080 Closed)
+2016-09-17T02:42:32-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10783f560>
+2016-09-17T02:42:32-0400 [-] Main loop terminated.
+2016-09-17T02:42:32-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-09-17T02:42:41-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-09-17T02:42:41-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-09-17T02:42:41-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-09-17T02:42:41-0400 [-] Site starting on 8080
+2016-09-17T02:42:41-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10a766638>
+2016-09-17T02:44:28-0400 [-] Received SIGTERM, shutting down.
+2016-09-17T02:44:28-0400 [-] (TCP Port 8080 Closed)
+2016-09-17T02:44:28-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10a766638>
+2016-09-17T02:44:28-0400 [-] Main loop terminated.
+2016-09-17T02:44:28-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-09-17T02:44:31-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-09-17T02:44:31-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-09-17T02:44:31-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-09-17T02:44:31-0400 [-] Site starting on 8080
+2016-09-17T02:44:31-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x101f89560>
+2016-09-17T02:46:01-0400 [-] Received SIGTERM, shutting down.
+2016-09-17T02:46:01-0400 [-] (TCP Port 8080 Closed)
+2016-09-17T02:46:01-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x101f89560>
+2016-09-17T02:46:01-0400 [-] Main loop terminated.
+2016-09-17T02:46:01-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-09-17T02:46:08-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-09-17T02:46:08-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-09-17T02:46:08-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-09-17T02:46:08-0400 [-] Site starting on 8080
+2016-09-17T02:46:08-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x101c5c680>
+2016-09-17T02:50:03-0400 [-] Received SIGTERM, shutting down.
+2016-09-17T02:50:03-0400 [-] (TCP Port 8080 Closed)
+2016-09-17T02:50:03-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x101c5c680>
+2016-09-17T02:50:03-0400 [-] Main loop terminated.
+2016-09-17T02:50:03-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
