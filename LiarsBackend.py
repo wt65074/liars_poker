@@ -95,7 +95,7 @@ class MultiEcho(Protocol):
         elif dataType == 2:
             #if not data.isdigit():
                 #return
-            identification = int(data)
+            identification = str(data)
             print "New ID" + str(identification)
             self.player.id = identification
             self.transport.write(generateDataString(7, "ID"))
@@ -256,7 +256,7 @@ class Player(object):
     def __init__(self):
 
         #identification information
-        self.id = 0
+        self.id = ""
         self.name = ""
         self.pushToken = ""
 
