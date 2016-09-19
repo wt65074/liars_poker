@@ -93,8 +93,8 @@ class MultiEcho(Protocol):
         # Player identification is sent in
         # We can now send the list of the rest of the players in the game to the player
         elif dataType == 2:
-            if not data.isdigit():
-                return
+            #if not data.isdigit():
+                #return
             identification = int(data)
             print "New ID" + str(identification)
             self.player.id = identification
