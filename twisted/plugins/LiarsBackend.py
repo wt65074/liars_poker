@@ -322,18 +322,18 @@ class GameState(object):
     # Call a ruby script to send the notifications
     def sendNotification(self, tokens):
 
-        # opens the configuration file and fetches the data in it
-        #with open('config.json') as json_data_file:
-            #configData = json.load(json_data_file)
+        opens the configuration file and fetches the data in it
+        with open('config.json') as json_data_file:
+            configData = json.load(json_data_file)
 
-        #with open(self.storageFolder + "/players.json", 'w') as outfile:
-           #data = {'deviceTokens' : tokens}
-            #json.dump(data, outfile)
+        with open(self.storageFolder + "/players.json", 'w') as outfile:
+           data = {'deviceTokens' : tokens}
+            json.dump(data, outfile)
   
         print "Data Dump"
-        #import subprocess
-        #print "ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json"
-        #subprocess.call("ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json", shell=True)
+        import subprocess
+        print "ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json"
+        subprocess.call("ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json", shell=True)
 
     # Send bet from player
     def sendBet(self, bet, betPlayer):
