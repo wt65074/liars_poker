@@ -1,445 +1,10 @@
-2016-11-02T22:41:17-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-11-02T22:41:17-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-11-02T22:41:17-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-11-02T22:41:17-0400 [stderr#error] Traceback (most recent call last):
-2016-11-02T22:41:17-0400 [stderr#error]   File "/usr/local/bin/twistd", line 18, in <module>
-2016-11-02T22:41:17-0400 [stderr#error]     run()
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/scripts/twistd.py", line 29, in run
-2016-11-02T22:41:17-0400 [stderr#error]     app.run(runApp, ServerOptions)
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 643, in run
-2016-11-02T22:41:17-0400 [stderr#error]     runApp(config)
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/scripts/twistd.py", line 25, in runApp
-2016-11-02T22:41:17-0400 [stderr#error]     _SomeApplicationRunner(config).run()
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/application/app.py", line 378, in run
-2016-11-02T22:41:17-0400 [stderr#error]     self.postApplication()
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/scripts/_twistd_unix.py", line 207, in postApplication
-2016-11-02T22:41:17-0400 [stderr#error]     self.startApplication(self.application)
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/scripts/_twistd_unix.py", line 394, in startApplication
-2016-11-02T22:41:17-0400 [stderr#error]     service.IService(application).privilegedStartService()
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/application/service.py", line 278, in privilegedStartService
-2016-11-02T22:41:17-0400 [stderr#error]     service.privilegedStartService()
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/application/service.py", line 278, in privilegedStartService
-2016-11-02T22:41:17-0400 [stderr#error]     service.privilegedStartService()
-2016-11-02T22:41:17-0400 [stderr#error]   File "/Library/Python/2.7/site-packages/twisted/application/internet.py", line 368, in privilegedStartService
-2016-11-02T22:41:17-0400 [stderr#error]     raisedNow[0].raiseException()
-2016-11-02T22:41:17-0400 [stderr#error]   File "<string>", line 2, in raiseException
-2016-11-02T22:41:17-0400 [stderr#error] twisted.internet.error.CannotListenError: Couldn't listen on any:10000: [Errno 48] Address already in use.
-2016-11-02T22:41:53-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-11-02T22:41:53-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-11-02T22:41:53-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-11-02T22:41:53-0400 [-] Site starting on 10000
-2016-11-02T22:41:53-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x1103bb1b8>
-2016-11-02T22:41:58-0400 [twisted.python.log#info] "10.189.58.231" - - [03/Nov/2016:02:41:57 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-02T22:41:58-0400 [twisted.python.log#info] "10.189.58.231" - - [03/Nov/2016:02:41:58 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-02T22:41:58-0400 [twisted.python.log#info] "10.189.58.231" - - [03/Nov/2016:02:41:58 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-02T22:42:00-0400 [twisted.python.log#info] "10.189.58.231" - - [03/Nov/2016:02:42:00 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-02T22:42:05-0400 [twisted.python.log#info] "10.189.58.231" - - [03/Nov/2016:02:42:05 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-03T01:44:14-0400 [twisted.python.log#info] "10.170.58.147" - - [03/Nov/2016:05:44:14 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-03T01:44:14-0400 [twisted.python.log#info] "10.170.58.147" - - [03/Nov/2016:05:44:14 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-03T01:44:14-0400 [twisted.python.log#info] "10.170.58.147" - - [03/Nov/2016:05:44:14 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-03T01:44:18-0400 [twisted.python.log#info] "10.170.58.147" - - [03/Nov/2016:05:44:18 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T02:50:32-0400 [twisted.python.log#info] "10.170.58.147" - - [04/Nov/2016:06:50:32 +0000] "GET /searchUser/Tr HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T02:50:33-0400 [twisted.python.log#info] "10.170.58.147" - - [04/Nov/2016:06:50:33 +0000] "GET /searchUser/Trs HTTP/1.1" 0 1515 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T02:50:38-0400 [twisted.python.log#info] "10.170.58.147" - - [04/Nov/2016:06:50:38 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T02:50:41-0400 [twisted.python.log#info] "10.170.58.147" - - [04/Nov/2016:06:50:41 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:30:59-0400 [-] Received SIGTERM, shutting down.
-2016-11-04T23:30:59-0400 [-] (TCP Port 10000 Closed)
-2016-11-04T23:30:59-0400 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x1103bb1b8>
-2016-11-04T23:30:59-0400 [-] Main loop terminated.
-2016-11-04T23:30:59-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-11-04T23:31:06-0400 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-11-04T23:31:06-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-11-04T23:31:06-0400 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-11-04T23:31:06-0400 [-] Site starting on 10000
-2016-11-04T23:31:06-0400 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10f1471b8>
-2016-11-04T23:32:34-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:32:34 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:32:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:32:42 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:51:58-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:51:58 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:51:58-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:51:58 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:52:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:52:02 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:52:03-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:52:02 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:54:20-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:54:20 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:54:20-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:54:20 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:54:20-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:54:20 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:54:21-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:54:20 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:54:24-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:54:23 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:55:23-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:55:22 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:55:23-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:55:22 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:55:23-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:55:22 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:55:23-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:55:23 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:55:30-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:55:29 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:59:48-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:59:48 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:59:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:59:48 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:59:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:59:48 +0000] "GET /searchUser/Ter HTTP/1.1" 0 1575 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:59:52-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:59:51 +0000] "GET /searchUser/Tee HTTP/1.1" 0 1575 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-04T23:59:53-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:03:59:52 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:04:55-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:04:55 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:04:55-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:04:55 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:04:56-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:04:56 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:05:06-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:05:05 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:06:39-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:06:39 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:06:39-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:06:39 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:06:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:06:41 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:09:12-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:09:12 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:09:13-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:09:12 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:09:13-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:09:13 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:09:14-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:09:14 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:09:16-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:09:15 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:09:17-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:09:17 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:10:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:10:02 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:10:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:10:02 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:10:03-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:10:02 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:10:03-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:10:02 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:10:08-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:10:08 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:11:21-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:11:21 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:11:22-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:11:22 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:11:25-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:11:25 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:12:51-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:12:50 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:12:51-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:12:51 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:12:51-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:12:51 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:12:52-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:12:51 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:12:55-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:12:55 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:15:22-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:15:22 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:15:22-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:15:22 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:15:24-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:15:24 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:15:27-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:15:26 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:25:14-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:25:14 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:25:14-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:25:14 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:25:14-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:25:14 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:25:16-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:25:16 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:25:19-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:25:19 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:28-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:28 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:30-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:29 +0000] "GET /searchUser/Ted HTTP/1.1" 0 1575 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:30-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:30 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:31-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:31 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:31-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:31 +0000] "GET /searchUser/Tesy HTTP/1.1" 0 1789 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:33-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:33 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:26:34-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:26:34 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:33:11-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:33:10 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:33:11-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:33:10 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:33:15-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:33:14 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:34:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:34:41 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:34:44-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:34:43 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:34:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:34:49 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:37:57-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:37:56 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:37:58-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:37:57 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:37:58-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:37:57 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:37:59-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:37:59 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:38:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:38:01 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:39:21-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:39:20 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:39:22-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:39:21 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:39:24-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:39:23 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:39:28-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:39:28 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:40:33-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:40:32 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:40:33-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:40:33 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:40:35-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:40:34 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:40:36-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:40:35 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:40:37-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:40:36 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:57:19-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:57:19 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:57:19-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:57:19 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:57:20-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:57:19 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:57:21-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:57:21 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:57:23-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:57:23 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:58:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:58:48 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:58:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:58:48 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:58:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:58:48 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:58:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:58:48 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T00:58:53-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:04:58:53 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:00:06-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:00:05 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:00:06-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:00:05 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:00:08-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:00:07 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:00:11-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:00:10 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:02:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:02:42 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:02:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:02:42 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:02:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:02:42 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:02:43-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:02:42 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:02:47-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:02:47 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:07:55-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:07:55 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:07:55-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:07:55 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:07:57-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:07:56 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:07:58-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:07:58 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:08:00-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:07:59 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:10:48-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:10:48 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:10:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:10:48 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:10:50-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:10:49 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:10:51-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:10:50 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T01:10:53-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:05:10:52 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T12:02:18-0400 [-] Timing out client: IPv4Address(TCP, '10.170.58.147', 64583)
-2016-11-05T18:39:22-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:39:22 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:39:22-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:39:22 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:39:23-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:39:22 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:39:24-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:39:23 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:39:26-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:39:25 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:45:44-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:45:43 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:45:44-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:45:44 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:45:44-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:45:44 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:45:44-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:45:44 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:45:49-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:45:48 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:47:16-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:47:15 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:47:21-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:47:20 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:51:04-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:51:03 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:51:05-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:51:04 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:51:07-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:51:06 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:54:25-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:54:24 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:54:28-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:54:28 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:55:38-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:55:37 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:55:38-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:55:37 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:55:40-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:55:39 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T18:55:42-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:22:55:41 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:06:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:06:01 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:06:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:06:01 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:06:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:06:01 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:06:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:06:01 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:06:05-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:06:04 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:13:01-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:13:01 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:13:01-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:13:01 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:13:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:13:01 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:13:02-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:13:02 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-05T19:13:05-0400 [twisted.python.log#info] "10.170.58.147" - - [05/Nov/2016:23:13:05 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-06T16:22:16-0500 [-] Received SIGTERM, shutting down.
-2016-11-06T16:22:16-0500 [-] (TCP Port 10000 Closed)
-2016-11-06T16:22:16-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10f1471b8>
-2016-11-06T16:22:16-0500 [-] Main loop terminated.
-2016-11-06T16:22:16-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-11-07T01:05:59-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-11-07T01:05:59-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-11-07T01:05:59-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-11-07T01:05:59-0500 [-] Site starting on 10000
-2016-11-07T01:05:59-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x106dac1b8>
-2016-11-07T01:06:01-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:06:01 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:06:06-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:06:06 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:08:25-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:08:25 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:08:25-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:08:25 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:08:25-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:08:25 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:08:27-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:08:27 +0000] "GET /searchUser/Yes HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:08:28-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:08:28 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:12:43-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:12:42 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:12:44-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:12:43 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:12:44-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:12:44 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:12:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:12:44 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:12:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:12:44 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:12:48-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:12:47 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:22:40-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:22:40 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:22:40-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:22:40 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:22:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:22:40 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:22:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:22:45 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:28:17-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:28:16 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:28:18-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:28:18 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:28:22-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:28:21 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:29:46-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:29:45 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:29:46-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:29:46 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:29:46-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:29:46 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:29:51-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:29:50 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:34:06-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:34:05 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:34:06-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:34:05 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:34:06-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:34:05 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:34:09-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:34:09 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:39:30-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:39:30 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:39:33-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:39:33 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:45:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:45:35 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:45:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:45:35 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:45:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:45:36 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:45:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:45:36 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:45:40-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:45:39 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:48:35-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:48:35 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:48:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:48:35 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:48:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:48:35 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:48:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:48:35 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:48:40-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:48:39 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:51:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:51:51 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:51:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:51:51 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:51:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:51:52 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:51:53-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:51:52 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:51:56-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:51:56 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:57:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:57:45 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:57:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:57:45 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:57:46-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:57:45 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:57:46-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:57:46 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T01:57:57-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:06:57:57 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T02:08:12-0500 [-] Received SIGTERM, shutting down.
-2016-11-07T02:08:12-0500 [-] (TCP Port 10000 Closed)
-2016-11-07T02:08:12-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x106dac1b8>
-2016-11-07T02:08:12-0500 [-] Main loop terminated.
-2016-11-07T02:08:12-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
-2016-11-07T13:34:14-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
-2016-11-07T13:34:14-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
-2016-11-07T13:34:14-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
-2016-11-07T13:34:14-0500 [-] Site starting on 10000
-2016-11-07T13:34:14-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x1078761b8>
-2016-11-07T13:38:05-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:38:05 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:38:05-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:38:05 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:38:05-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:38:05 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:38:05-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:38:05 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:38:11-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:38:11 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:43:15-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:43:15 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:43:16-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:43:15 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:43:16-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:43:15 +0000] "GET /searchUser/Tes HTTP/1.1" 0 1635 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:43:16-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:43:16 +0000] "GET /searchUser/Test HTTP/1.1" 0 1849 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T13:43:21-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:18:43:20 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:09-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:08 +0000] "GET /searchUser/Hen HTTP/1.1" 0 503 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:09-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:08 +0000] "GET /searchUser/Henr HTTP/1.1" 0 577 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:09-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:08 +0000] "GET /searchUser/Henry HTTP/1.1" 0 651 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:13-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:13 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:13-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:13 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:13-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:13 +0000] "GET /searchUser/Har HTTP/1.1" 0 743 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:14-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:13 +0000] "GET /searchUser/Harr HTTP/1.1" 0 854 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:17-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:16 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:17-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:16 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:17-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:17 +0000] "GET /searchUser/Xan HTTP/1.1" 0 505 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:17-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:17 +0000] "GET /searchUser/Xand HTTP/1.1" 0 579 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:22-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:21 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:22-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:21 +0000] "GET /searchUser/Hi HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:22-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:22 +0000] "GET /searchUser/Hil HTTP/1.1" 0 344 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:22-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:22 +0000] "GET /searchUser/Hild HTTP/1.1" 0 366 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:23-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:22 +0000] "GET /searchUser/Hil HTTP/1.1" 0 344 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:23-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:22 +0000] "GET /searchUser/Hi HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:24-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:23 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:24-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:23 +0000] "GET /searchUser/Ho HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:24-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:23 +0000] "GET /searchUser/Hol HTTP/1.1" 0 506 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:24-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:24 +0000] "GET /searchUser/Hold HTTP/1.1" 0 580 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:24:28-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:24:27 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:43-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:43 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:44-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:43 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:44-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:43 +0000] "GET /searchUser/Tes HTTP/1.1" 0 910 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:45-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:45 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:45-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:45 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:46-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:46 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:47-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:46 +0000] "GET /searchUser/Ho HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:47-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:46 +0000] "GET /searchUser/Hol HTTP/1.1" 0 506 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:52-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:51 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:52-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:52 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:53-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:53 +0000] "GET /searchUser/Xan HTTP/1.1" 0 505 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:55-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:54 +0000] "GET /searchUser/Can HTTP/1.1" 0 744 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:57-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:56 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:57-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:56 +0000] "GET /searchUser/He HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:25:57-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:25:57 +0000] "GET /searchUser/Hen HTTP/1.1" 0 503 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:26:02-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:26:01 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:26:03-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:26:02 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:26:03-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:26:03 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:26:04-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:26:03 +0000] "GET /searchUser/Har HTTP/1.1" 0 743 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T14:26:07-0500 [twisted.python.log#info] "10.189.58.231" - - [07/Nov/2016:19:26:06 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:47-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:46 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:47-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:46 +0000] "GET /searchUser/He HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:48-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:47 +0000] "GET /searchUser/Hen HTTP/1.1" 0 503 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:51 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:51 +0000] "GET /searchUser/Ho HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:51 +0000] "GET /searchUser/Hol HTTP/1.1" 0 506 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:54-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:53 +0000] "GET /searchUser/Ho HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:54-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:53 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:55-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:54 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:55-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:54 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:56-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:55 +0000] "GET /searchUser/Xan HTTP/1.1" 0 505 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:57-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:56 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:57-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:56 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:58-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:57 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:58-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:57 +0000] "GET /searchUser/Co HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:59-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:58 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:59-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:58 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:20:59-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:59 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:21:00-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:59 +0000] "GET /searchUser/Har HTTP/1.1" 0 743 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:21:00-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:20:59 +0000] "GET /searchUser/Harr HTTP/1.1" 0 854 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:21:05-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:21:04 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:11-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:10 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:11-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:10 +0000] "GET /searchUser/Tes HTTP/1.1" 0 910 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:22-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:21 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:22-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:21 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:24-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:23 +0000] "GET /searchUser/Xan HTTP/1.1" 0 505 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:28-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:27 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:28-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:27 +0000] "GET /searchUser/Co HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:29-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:28 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:29-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:28 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:29-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:28 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:29-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:28 +0000] "GET /searchUser/Har HTTP/1.1" 0 743 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:30-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:29 +0000] "GET /searchUser/Harr HTTP/1.1" 0 854 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:22:33-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:22:33 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:36 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:36 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:36 +0000] "GET /searchUser/Tes HTTP/1.1" 0 910 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:43-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:42 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:43-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:43 +0000] "GET /searchUser/He HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:44-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:44 +0000] "GET /searchUser/Hen HTTP/1.1" 0 503 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:48 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:49 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:49 +0000] "GET /searchUser/Har HTTP/1.1" 0 743 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:49 +0000] "GET /searchUser/Harr HTTP/1.1" 0 854 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:52 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:52 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:54-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:54 +0000] "GET /searchUser/Xan HTTP/1.1" 0 505 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:23:54-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:23:54 +0000] "GET /searchUser/Xand HTTP/1.1" 0 579 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:24:02-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:24:02 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:24:02-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:24:02 +0000] "GET /searchUser/Ho HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:24:03-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:24:02 +0000] "GET /searchUser/Hol HTTP/1.1" 0 506 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:24:05-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:24:05 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:09-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:08 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:09-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:08 +0000] "GET /searchUser/Tes HTTP/1.1" 0 910 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:39-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:39 +0000] "GET /searchUser/Tes HTTP/1.1" 0 240 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:39-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:39 +0000] "GET /searchUser/Test HTTP/1.1" 0 262 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:44 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:44 +0000] "GET /searchUser/He HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:44 +0000] "GET /searchUser/Hen HTTP/1.1" 0 953 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:48 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:48 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:48 +0000] "GET /searchUser/Xan HTTP/1.1" 0 272 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:53-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:52 +0000] "GET /searchUser/G HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:53-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:52 +0000] "GET /searchUser/Ga HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:54-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:53 +0000] "GET /searchUser/G HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:54-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:54 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:55-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:54 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:55-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:54 +0000] "GET /searchUser/Har HTTP/1.1" 0 955 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:55-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:54 +0000] "GET /searchUser/Harr HTTP/1.1" 0 1059 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:30:57-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:30:57 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:25-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:25 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:26-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:25 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:26-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:26 +0000] "GET /searchUser/Tes HTTP/1.1" 0 240 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:26-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:26 +0000] "GET /searchUser/Test HTTP/1.1" 0 262 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:30-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:30 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:30-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:30 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:31-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:31 +0000] "GET /searchUser/Xan HTTP/1.1" 0 272 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:32-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:32 +0000] "GET /searchUser/Xand HTTP/1.1" 0 309 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:35 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:35 +0000] "GET /searchUser/Ho HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:36 +0000] "GET /searchUser/Hol HTTP/1.1" 0 953 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:39-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:39 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:39-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:39 +0000] "GET /searchUser/Co HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:39-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:39 +0000] "GET /searchUser/Col HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:41 +0000] "GET /searchUser/Colt HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:41 +0000] "GET /searchUser/Coltr HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:41 +0000] "GET /searchUser/Colt HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:41 +0000] "GET /searchUser/Col HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:42-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:41 +0000] "GET /searchUser/Co HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:42-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:42 +0000] "GET /searchUser/C HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:43-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:42 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:43-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:43 +0000] "GET /searchUser/He HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:43-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:43 +0000] "GET /searchUser/Hen HTTP/1.1" 0 953 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:47-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:47 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:48-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:47 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:48-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:48 +0000] "GET /searchUser/Har HTTP/1.1" 0 955 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:48-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:48 +0000] "GET /searchUser/Harr HTTP/1.1" 0 1059 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:36:52-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:36:52 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:09-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:09 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:09-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:09 +0000] "GET /searchUser/Tes HTTP/1.1" 0 240 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:09-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:09 +0000] "GET /searchUser/Test HTTP/1.1" 0 262 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:12-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:12 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:12-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:12 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:13-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:12 +0000] "GET /searchUser/Har HTTP/1.1" 0 955 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:13-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:12 +0000] "GET /searchUser/Harr HTTP/1.1" 0 1059 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:15-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:15 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:16-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:15 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:16-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:15 +0000] "GET /searchUser/Xan HTTP/1.1" 0 272 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:20-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:19 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:20-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:19 +0000] "GET /searchUser/He HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:20-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:20 +0000] "GET /searchUser/Hen HTTP/1.1" 0 953 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:20-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:20 +0000] "GET /searchUser/Henr HTTP/1.1" 0 1056 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:42:29-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:42:29 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:33-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:32 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:33-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:32 +0000] "GET /searchUser/Xq HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:34-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:33 +0000] "GET /searchUser/Xqn HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:35-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:34 +0000] "GET /searchUser/Xqnd HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:35-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:34 +0000] "GET /searchUser/Xqnde HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:35-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:35 +0000] "GET /searchUser/Xqnder HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:35 +0000] "GET /searchUser/Xander HTTP/1.1" 0 383 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:36-0500 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-11-07 15:48:36,386] ERROR in app: Exception on /searchUser/Xander  [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app\n    response = self.full_dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router\n    return original_handler(e)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception\n    reraise(exc_type, exc_value, tb)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 221, in searchUser\n    cur.execute("SELECT name, username, id, device_token, " + masterMatchString + " FROM Users HAVING " + additionString + " > 0.1 " + "ORDER BY " + additionString + " DESC")\n  File "/Library/Python/2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'FROM Users HAVING score1 + score2 + score3 + score4 + score5 + score6 > 0.1 ORDE\' at line 7")\n' (unicode)
-2016-11-07T15:48:36-0500 [wsgi] [2016-11-07 15:48:36,386] ERROR in app: Exception on /searchUser/Xander  [GET]
+2016-11-07T20:46:52-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-11-07T20:46:52-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-11-07T20:46:52-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-11-07T20:46:52-0500 [-] Site starting on 10000
+2016-11-07T20:46:52-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10ba77248>
+2016-11-07T20:46:56-0500 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-11-07 20:46:56,354] ERROR in app: Exception on /searchUser/Holden [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app\n    response = self.full_dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router\n    return original_handler(e)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception\n    reraise(exc_type, exc_value, tb)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 154, in searchUser\n    cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base\n  File "/Library/Python/2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect\n    return Connection(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 193, in __init__\n    super(Connection, self).__init__(*args, **kwargs2)\nOperationalError: (1049, "Unknown database \'Liars\'")\n' (unicode)
+2016-11-07T20:46:56-0500 [wsgi] [2016-11-07 20:46:56,354] ERROR in app: Exception on /searchUser/Holden [GET]
 	Traceback (most recent call last):
 	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app
 	    response = self.full_dispatch_request()
@@ -453,34 +18,136 @@
 	    rv = self.dispatch_request()
 	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
 	    return self.view_functions[rule.endpoint](**req.view_args)
-	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 221, in searchUser
+	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 154, in searchUser
+	    cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base
+	  File "/Library/Python/2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+	    return Connection(*args, **kwargs)
+	  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+	    super(Connection, self).__init__(*args, **kwargs2)
+	OperationalError: (1049, "Unknown database 'Liars'")
+	
+2016-11-07T20:46:56-0500 [twisted.python.log#info] "127.0.0.1" - - [08/Nov/2016:01:46:55 +0000] "GET /searchUser/Holden HTTP/1.1" 500 291 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"
+2016-11-07T20:50:30-0500 [-] Received SIGTERM, shutting down.
+2016-11-07T20:50:30-0500 [-] (TCP Port 10000 Closed)
+2016-11-07T20:50:30-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10ba77248>
+2016-11-07T20:50:30-0500 [-] Main loop terminated.
+2016-11-07T20:50:30-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-11-07T20:51:27-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-11-07T20:51:27-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-11-07T20:51:27-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-11-07T20:51:27-0500 [-] Site starting on 10000
+2016-11-07T20:51:27-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10b9c7248>
+2016-11-07T20:52:03-0500 [-] Received SIGTERM, shutting down.
+2016-11-07T20:52:03-0500 [-] (TCP Port 10000 Closed)
+2016-11-07T20:52:03-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10b9c7248>
+2016-11-07T20:52:03-0500 [-] Main loop terminated.
+2016-11-07T20:52:03-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-11-07T20:52:05-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-11-07T20:52:05-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-11-07T20:52:05-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-11-07T20:52:05-0500 [-] Site starting on 10000
+2016-11-07T20:52:05-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10e575e60>
+2016-11-07T20:52:23-0500 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-11-07 20:52:23,198] ERROR in app: Exception on /searchUser/Holden [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app\n    response = self.full_dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router\n    return original_handler(e)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception\n    reraise(exc_type, exc_value, tb)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 154, in searchUser\n    cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base\n  File "/Library/Python/2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect\n    return Connection(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 193, in __init__\n    super(Connection, self).__init__(*args, **kwargs2)\nOperationalError: (1049, "Unknown database \'Liars\'")\n' (unicode)
+2016-11-07T20:52:23-0500 [wsgi] [2016-11-07 20:52:23,198] ERROR in app: Exception on /searchUser/Holden [GET]
+	Traceback (most recent call last):
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+	    response = self.full_dispatch_request()
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+	    rv = self.handle_user_exception(e)
+	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router
+	    return original_handler(e)
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+	    reraise(exc_type, exc_value, tb)
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+	    rv = self.dispatch_request()
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+	    return self.view_functions[rule.endpoint](**req.view_args)
+	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 154, in searchUser
+	    cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base
+	  File "/Library/Python/2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+	    return Connection(*args, **kwargs)
+	  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+	    super(Connection, self).__init__(*args, **kwargs2)
+	OperationalError: (1049, "Unknown database 'Liars'")
+	
+2016-11-07T20:52:23-0500 [twisted.python.log#info] "127.0.0.1" - - [08/Nov/2016:01:52:22 +0000] "GET /searchUser/Holden HTTP/1.1" 500 291 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"
+2016-11-07T20:53:09-0500 [-] Received SIGTERM, shutting down.
+2016-11-07T20:53:09-0500 [-] (TCP Port 10000 Closed)
+2016-11-07T20:53:09-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10e575e60>
+2016-11-07T20:53:09-0500 [-] Main loop terminated.
+2016-11-07T20:53:09-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-11-07T20:53:48-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-11-07T20:53:48-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-11-07T20:53:48-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-11-07T20:53:48-0500 [-] Site starting on 10000
+2016-11-07T20:53:48-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x1110bb248>
+2016-11-07T20:53:52-0500 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-11-07 20:53:52,701] ERROR in app: Exception on /searchUser/Holden [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app\n    response = self.full_dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router\n    return original_handler(e)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception\n    reraise(exc_type, exc_value, tb)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 154, in searchUser\n    cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base\n  File "/Library/Python/2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect\n    return Connection(*args, **kwargs)\n  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 193, in __init__\n    super(Connection, self).__init__(*args, **kwargs2)\nOperationalError: (1049, "Unknown database \'Liars\'")\n' (unicode)
+2016-11-07T20:53:52-0500 [wsgi] [2016-11-07 20:53:52,701] ERROR in app: Exception on /searchUser/Holden [GET]
+	Traceback (most recent call last):
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+	    response = self.full_dispatch_request()
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+	    rv = self.handle_user_exception(e)
+	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router
+	    return original_handler(e)
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+	    reraise(exc_type, exc_value, tb)
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+	    rv = self.dispatch_request()
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+	    return self.view_functions[rule.endpoint](**req.view_args)
+	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 154, in searchUser
+	    cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base
+	  File "/Library/Python/2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+	    return Connection(*args, **kwargs)
+	  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+	    super(Connection, self).__init__(*args, **kwargs2)
+	OperationalError: (1049, "Unknown database 'Liars'")
+	
+2016-11-07T20:53:52-0500 [twisted.python.log#info] "127.0.0.1" - - [08/Nov/2016:01:53:51 +0000] "GET /searchUser/Holden HTTP/1.1" 500 291 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"
+2016-11-07T20:55:46-0500 [-] Received SIGTERM, shutting down.
+2016-11-07T20:55:46-0500 [-] (TCP Port 10000 Closed)
+2016-11-07T20:55:46-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x1110bb248>
+2016-11-07T20:55:46-0500 [-] Main loop terminated.
+2016-11-07T20:55:46-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-11-07T20:55:47-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-11-07T20:55:47-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-11-07T20:55:47-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-11-07T20:55:47-0500 [-] Site starting on 10000
+2016-11-07T20:55:47-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x10198ce60>
+2016-11-07T20:55:50-0500 [twisted.logger._global#warn] /Library/Python/2.7/site-packages/twisted/web/wsgi.py:128: exceptions.UnicodeWarning: write() argument should be str, not u'[2016-11-07 20:55:50,616] ERROR in app: Exception on /searchUser/Holden [GET]\nTraceback (most recent call last):\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app\n    response = self.full_dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request\n    rv = self.handle_user_exception(e)\n  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router\n    return original_handler(e)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception\n    reraise(exc_type, exc_value, tb)\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request\n    rv = self.dispatch_request()\n  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request\n    return self.view_functions[rule.endpoint](**req.view_args)\n  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 222, in searchUser\n    cur.execute("SELECT name, username, id, device_token, " + masterMatchString + " FROM Users HAVING " + additionString + " > 0.1 " + "ORDER BY " + additionString + " DESC")\n  File "/Library/Python/2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nOperationalError: (1191, "Can\'t find FULLTEXT index matching the column list")\n' (unicode)
+2016-11-07T20:55:50-0500 [wsgi] [2016-11-07 20:55:50,616] ERROR in app: Exception on /searchUser/Holden [GET]
+	Traceback (most recent call last):
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1988, in wsgi_app
+	    response = self.full_dispatch_request()
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1641, in full_dispatch_request
+	    rv = self.handle_user_exception(e)
+	  File "/Library/Python/2.7/site-packages/flask_restful/__init__.py", line 271, in error_router
+	    return original_handler(e)
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1544, in handle_user_exception
+	    reraise(exc_type, exc_value, tb)
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1639, in full_dispatch_request
+	    rv = self.dispatch_request()
+	  File "/Library/Python/2.7/site-packages/flask/app.py", line 1625, in dispatch_request
+	    return self.view_functions[rule.endpoint](**req.view_args)
+	  File "/Users/wtobey/Desktop/LiarsBackend/LiarsREST.py", line 222, in searchUser
 	    cur.execute("SELECT name, username, id, device_token, " + masterMatchString + " FROM Users HAVING " + additionString + " > 0.1 " + "ORDER BY " + additionString + " DESC")
 	  File "/Library/Python/2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
 	    self.errorhandler(self, exc, value)
 	  File "/Library/Python/2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
 	    raise errorclass, errorvalue
-	ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM Users HAVING score1 + score2 + score3 + score4 + score5 + score6 > 0.1 ORDE' at line 7")
+	OperationalError: (1191, "Can't find FULLTEXT index matching the column list")
 	
-2016-11-07T15:48:36-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:35 +0000] "GET /searchUser/Xander%20 HTTP/1.1" 500 291 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:37-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:36 +0000] "GET /searchUser/Xander HTTP/1.1" 0 383 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:40 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:40 +0000] "GET /searchUser/Hi HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:41-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:41 +0000] "GET /searchUser/Hil HTTP/1.1" 0 953 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:45-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:44 +0000] "GET /searchUser/Hol HTTP/1.1" 0 953 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:49-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:48 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:48:51-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:48:50 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:07-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:06 +0000] "GET /searchUser/T HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:07-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:06 +0000] "GET /searchUser/Te HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:07-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:06 +0000] "GET /searchUser/Tes HTTP/1.1" 0 240 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:08-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:07 +0000] "GET /searchUser/Test HTTP/1.1" 0 262 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:11-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:10 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:11-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:10 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:12-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:11 +0000] "GET /searchUser/Har HTTP/1.1" 0 955 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:15-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:14 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:33-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:32 +0000] "GET /searchUser/H HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:33-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:32 +0000] "GET /searchUser/Ha HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:34-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:33 +0000] "GET /searchUser/Har HTTP/1.1" 0 955 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:38-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:38 +0000] "GET /searchUser/X HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:39-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:38 +0000] "GET /searchUser/Xa HTTP/1.1" 0 36 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:40-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:39 +0000] "GET /searchUser/Xan HTTP/1.1" 0 272 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
-2016-11-07T15:50:44-0500 [twisted.python.log#info] "10.170.58.147" - - [07/Nov/2016:20:50:43 +0000] "GET /newGame HTTP/1.1" 0 39 "-" "LiarsPoker/1 CFNetwork/808.1.4 Darwin/16.1.0"
+2016-11-07T20:55:50-0500 [twisted.python.log#info] "127.0.0.1" - - [08/Nov/2016:01:55:49 +0000] "GET /searchUser/Holden HTTP/1.1" 500 291 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"
+2016-11-07T20:57:05-0500 [-] Received SIGTERM, shutting down.
+2016-11-07T20:57:05-0500 [-] (TCP Port 10000 Closed)
+2016-11-07T20:57:05-0500 [twisted.web.server.Site#info] Stopping factory <twisted.web.server.Site instance at 0x10198ce60>
+2016-11-07T20:57:05-0500 [-] Main loop terminated.
+2016-11-07T20:57:05-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] Server Shut Down.
+2016-11-07T20:57:06-0500 [-] Unable to write to plugin cache /Library/Python/2.7/site-packages/twisted/plugins/dropin.cache: error number 13
+2016-11-07T20:57:06-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] twistd 16.3.0 (/usr/bin/python 2.7.10) starting up.
+2016-11-07T20:57:06-0500 [twisted.scripts._twistd_unix.UnixAppLogger#info] reactor class: twisted.internet.selectreactor.SelectReactor.
+2016-11-07T20:57:06-0500 [-] Site starting on 10000
+2016-11-07T20:57:06-0500 [twisted.web.server.Site#info] Starting factory <twisted.web.server.Site instance at 0x1089e2e60>
+2016-11-07T20:57:08-0500 [twisted.python.log#info] "127.0.0.1" - - [08/Nov/2016:01:57:08 +0000] "GET /searchUser/Holden HTTP/1.1" 0 382 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"
+2016-11-07T21:21:09-0500 [twisted.python.log#info] "127.0.0.1" - - [08/Nov/2016:02:21:09 +0000] "GET /searchUser/Harry HTTP/1.1" 0 347 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14"

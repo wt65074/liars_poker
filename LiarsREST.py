@@ -11,8 +11,9 @@ import MySQLdb.cursors
 app = Flask(__name__)
 api = Api(app)
 
-databasename = "127.0.0.1" #liarsdbinstance.cbepqaptqsog.us-west-1.rds.amazonaws.com:3306
-sqlUsername = "root" #wtobey
+databasename = "liarsdb.cbepqaptqsog.us-west-1.rds.amazonaws.com"
+sqlUsername = "wtobey"
+_db = "Users"
 
 @app.route('/newGame', methods = ['GET'])
 def newGame():
@@ -20,7 +21,7 @@ def newGame():
     db = MySQLdb.connect(host=databasename,    # your host, usually localhost
                          user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Liars")        # name of the data base
+                         db=_db)        # name of the data base
 
     cur = db.cursor()
 
@@ -76,7 +77,7 @@ def getUser():
     db = MySQLdb.connect(host=databasename,    # your host, usually localhost
                          user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Liars")        # name of the data base
+                         db=_db)        # name of the data base
 
     cur = db.cursor()
 
@@ -116,7 +117,7 @@ def addUser(token):
     db = MySQLdb.connect(host=databasename,    # your host, usually localhost
                          user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Liars")        # name of the data base
+                         db=_db)        # name of the data base
 
     cur = db.cursor()
 
@@ -150,7 +151,7 @@ def searchUser(searchString):
     db = MySQLdb.connect(host=databasename,    # your host, usually localhost
                          user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Liars",
+                         db=_db,
                          cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base
 
     cur = db.cursor()
@@ -234,7 +235,7 @@ def updateUser():
     db = MySQLdb.connect(host=databasename,    # your host, usually localhost
                          user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Liars")        # name of the data base
+                         db=_db)        # name of the data base
 
     cur = db.cursor()
 
