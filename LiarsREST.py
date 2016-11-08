@@ -5,18 +5,22 @@ import os
 from random import randint
 from ConfigParser import SafeConfigParser
 import json
+import MySQLdb.cursors
 
 
 app = Flask(__name__)
 api = Api(app)
 
-@app.route('/newGame', methods = ['GET'])
-def newGame(self):
+databasename = "127.0.0.1" #liarsdbinstance.cbepqaptqsog.us-west-1.rds.amazonaws.com:3306
+sqlUsername = "root" #wtobey
 
-    db = MySQLdb.connect(host="wtobeyinstance.cbepqaptqsog.us-west-1.rds.amazonaws.com",    # your host, usually localhost
-                         user="wtobey",         # your username
+@app.route('/newGame', methods = ['GET'])
+def newGame():
+
+    db = MySQLdb.connect(host=databasename,    # your host, usually localhost
+                         user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Users")        # name of the data base
+                         db="Liars")        # name of the data base
 
     cur = db.cursor()
 
@@ -69,10 +73,10 @@ def getUser():
 
     #EX: curl -X GET -d 'id=26' 127.0.0.1:10000/getUser
 
-    db = MySQLdb.connect(host="wtobeyinstance.cbepqaptqsog.us-west-1.rds.amazonaws.com",    # your host, usually localhost
-                         user="wtobey",         # your username
+    db = MySQLdb.connect(host=databasename,    # your host, usually localhost
+                         user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Users")        # name of the data base
+                         db="Liars")        # name of the data base
 
     cur = db.cursor()
 
@@ -109,10 +113,10 @@ def returnTrue():
 @app.route('/newUser/<token>')
 def addUser(token):
 
-    db = MySQLdb.connect(host="wtobeyinstance.cbepqaptqsog.us-west-1.rds.amazonaws.com",    # your host, usually localhost
-                         user="wtobey",         # your username
+    db = MySQLdb.connect(host=databasename,    # your host, usually localhost
+                         user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Users")        # name of the data base
+                         db="Liars")        # name of the data base
 
     cur = db.cursor()
 
@@ -140,13 +144,97 @@ def addUser(token):
     resp.status_code = 0
     return resp
 
+@app.route('/searchUser/<searchString>')
+def searchUser(searchString):
+
+    db = MySQLdb.connect(host=databasename,    # your host, usually localhost
+                         user=sqlUsername,         # your username
+                         passwd="eighTnine9one!",  # your password
+                         db="Liars",
+                         cursorclass=MySQLdb.cursors.DictCursor)        # name of the data base
+
+    cur = db.cursor()
+
+    count = 0
+    needNewString = True
+
+    # return no result until a third character is entered
+    if len(searchString) < 3:
+        message = {
+            'status': 0,
+            'message': {}
+        }
+
+        resp = jsonify(message)
+        resp.status_code = 0
+        return resp
+
+    #tracks the length of the string to remove the trailing comma for the last value
+    stringIndex = 0
+
+    #holds the match against string
+    masterMatchString = ""
+
+    for letter in searchString:
+
+        stringIndex += 1
+
+        if letter == " ":
+            #dont process a space, just continue and let the loop know a new word is needed
+            needNewString = True
+            continue
+        if needNewString:
+            #reset word
+            word = ""
+            #set new string to false until we get a space
+            needNewString = False
+
+        #add one to count, which tracks the total number of statements
+        count += 1
+        #add the letter to word
+        word += letter
+
+        #get the score value for the relevance grade
+        score = "score" + str(count)
+
+        if stringIndex != len(searchString):
+            matchString = "MATCH (username, name) AGAINST ('" + word + "*' " + "IN BOOLEAN MODE) AS " + score + ","
+        else:
+            matchString = "MATCH (username, name) AGAINST ('" + word + "*' " + "IN BOOLEAN MODE) AS " + score
+
+        masterMatchString += matchString + "\n"
+
+    #holds the string of scoreX + scoreY...
+    additionString = ""
+    #counts up to count
+    count2 = 0
+
+    while count2 < count:
+
+        count2 += 1
+
+        if count2 == count:
+            additionString += "score" + str(count2)
+        else:
+            additionString += "score" + str(count2) + " + "
+
+    cur.execute("SELECT name, username, id, device_token, " + masterMatchString + " FROM Users HAVING " + additionString + " > 0.1 " + "ORDER BY " + additionString + " DESC")
+    message = {
+        'status': 0,
+        'message': cur.fetchall()
+    }
+
+    resp = jsonify(message)
+    resp.status_code = 0
+    return resp
+
 @app.route('/user', methods = ['PUT', 'POST'])
 def updateUser():
 
-    db = MySQLdb.connect(host="wtobeyinstance.cbepqaptqsog.us-west-1.rds.amazonaws.com",    # your host, usually localhost
-                         user="wtobey",         # your username
+    db = MySQLdb.connect(host=databasename,    # your host, usually localhost
+                         user=sqlUsername,         # your username
                          passwd="eighTnine9one!",  # your password
-                         db="Users")        # name of the data base
+                         db="Liars")        # name of the data base
 
     cur = db.cursor()
 

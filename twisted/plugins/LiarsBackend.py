@@ -6,6 +6,11 @@ import json
 import sys
 
 def generateDataString(dataType, data):
+    # Takes a data type and returns a string in the format:
+    # LengthOfData+TypeOfData+Data
+    # Where the pluses aren't in the string and the length and type of data is four digits
+    # EX: dataType = 1, data = "Example"
+    # EX OUTPUT: 00110001Example
 
     #get the number of digits and the zeros to append to dataType to make it 4 digits
     zeros = "0" * (4 - len(str(dataType)))
@@ -25,21 +30,21 @@ def generateDataString(dataType, data):
     #create the string from zeros and content length
     lengthString = zeros + str(contentLength)
 
-    print lengthString + contentString
+    print "SENDING STRING: " + lengthString + contentString
 
     return lengthString + contentString
 
 class MultiEcho(Protocol):
 
     def __init__(self, factory, player):
-        log.msg("New Protocol")
+
+        print("New Protocol")
         self.factory = factory
         self.player = player
         self.inputBuffer = ""
 
-    #filters out late connections and updates players on who is part of the game
     def connectionMade(self):
-
+        print("New connection")
         if self.factory.gameState.state != 0:
 
             # We drop any connections made after the game is started
@@ -51,63 +56,70 @@ class MultiEcho(Protocol):
     def handleData(self, dataType, data):
 
         #TYPES
-        #0 - players
-        #1 - id
-        #2 - host instruction
-        #3 - move
+        #1 - players
+        #2 - id
+        #3 - host instruction
+        #4 - move
+        print "ID: " + str(self.player.id) + " Handle Data: Type: " + str(dataType) + "Data: " + data
 
-        # If the player is not the current player and the game has started return
+        # If the player is not the current player and the game has not started return
         # The players have no data if it is not their turn except their identification
         if self.factory.gameState.currentPlayer != self.player and self.factory.gameState.state != 0:
+            print "Player Should Not Be Sending Data"
+            print "Reason: Not Their Turn"
             return
 
         # Game not started, only host can send message
         # Once a player connects, they can do nothing else until the game starts
-        if self.factory.gameState.state == 0 and self.factory.gameState.host != self.player:
-            return
 
         # If the player has not identified themselves return
         # Every player must first identify themselves, except the host
-        if self.player.id == 0 and (dataType != 1 or dataType != 0):
+        if self.player.id == "" and (dataType != 2 and dataType != 1 and dataType != 0):
+            print "Player Should Not Be Sending Data Of This Type"
+            print "Reason: Have not send ID"
             return
 
-        # INVITED PLAYER LIST ------------------
-        # Player identification list is recieved in the form id+name+pushtoken|id+name+pushtoken
+        # TOKENS TO SEND NOTIFICATION TO ---------
+        # Expecting to recived token|token|token
         if dataType == 0:
 
-            tokens = []
+            tokens = data.split("|")
+            self.factory.gameState.sendNotification(tokens)
 
-            #id+name+pushtoken|id+name+pushtoken
-            for string in data.split("|"):
-                # Save entire identification string
-                self.factory.gameState.playerList += string
+        # INVITED PLAYER LIST ------------------
+        # Player identification list is recieved in the form id+name+username|id+name+username
+        if dataType == 1:
 
-                # Forward the deviceTokens so the json can be dumped
-                tokens += string.split("+")[2]
+            print "Player ID List recieved"
 
-            # Save deviceTokens as json and execute push notifiations
-            #self.factory.gameState.dumpPlayerDeviceTokens(tokens)
+            self.factory.gameState.playerList = data
+
+            print "New Player List" + str(self.factory.gameState.playerList)
 
         # PLAYER IDENTIFICATION -------------------
         # Player identification is sent in
         # We can now send the list of the rest of the players in the game to the player
-        elif dataType == 1:
-            if not data.isdigit():
-                return
-            identification = int(data)
+        elif dataType == 2:
+            #if not data.isdigit():
+                #return
+            identification = str(data)
+            print "Player ID'D As: " + str(identification)
             self.player.id = identification
+
+            #notify that the id has been recived
+            self.transport.write(generateDataString(7, "ID"))
 
             # Inform all players that there has been a new identificatioin by sending a new id
             # Add this players id to the array of accepted players
-            self.factory.gameState.updatePlayer(self.playeer)
+            self.factory.gameState.updatePlayer(self.player)
 
         # BEGIN GAME -----------------------
-        elif dataType == 2:
+        elif dataType == 3:
 
             self.factory.gameState.beginGame()
 
         # GAME PLAY TYPE (CALL OR BET) ---------------
-        elif dataType == 3:
+        elif dataType == 4:
             print "Data Type 2"
             #game play syntax
             #BET - Number+Digit
@@ -136,14 +148,12 @@ class MultiEcho(Protocol):
         else:
             print "Unknown Data Type"
 
-
-
-        print dataType, dataLength, data
-
     def parse_data(self, data):
 
+        # Append data to the input buffer
         self.inputBuffer += data
 
+        # Check if we have enough data to split the string
         if '::' not in self.inputBuffer:
             return
 
@@ -151,42 +161,41 @@ class MultiEcho(Protocol):
 
         while continueLoop == True:
 
-            print "Loop"
-            print self.inputBuffer
-
             continueLoop = False
 
             toDelete = 0
 
-            #do not have enough data to parse
-            #return and wait till more data is sent
             if len(self.inputBuffer.split("::")) < 3:
+                # We do not have enough data and must wait until more comes in
                 print "Not enough data dividers"
                 return
             if len(self.inputBuffer.split("::")) >= 5:
-                #greate than 5 because they will run together
+                # Set continue look to true because we know we have more than 1 set of data and should continue
                 continueLoop = True
 
+            # Split the string
             splitString = self.inputBuffer.split("::")
 
+            # Set the delete to the size
             toDelete += 4
 
             if not splitString[0].isdigit():
+                # The first section of data should be a digit containing the data type
                 #impliment better error handling
-                print "0 is not digit"
                 return
 
             if not splitString[1].isdigit():
+                # The second section of data should be a digit containing the length of the data
                 #implemet better error handling
-                print "1 is not digit"
                 return
 
-            print "Stuff is digi"
-
+            # Add the length of the strings to the number of characters we need to delete
             toDelete += len(splitString[0])
             toDelete += len(splitString[1])
 
+            # Set the data type
             dataType = int(splitString[0])
+            # Set the data length
             dataLength = int(splitString[1])
 
             #get the correct number of data from data, if it isnt enough it will return the length of the string
@@ -195,11 +204,9 @@ class MultiEcho(Protocol):
             if len(parsedData) < dataLength:
                 #not enough data in buffer
                 #return and wait till more data is sent
-                print len(parsedData)
                 return
 
             toDelete += len(parsedData)
-            print(toDelete)
             self.inputBuffer = self.inputBuffer[toDelete:len(self.inputBuffer)]
             self.handleData(dataType, parsedData)
 
@@ -228,9 +235,8 @@ class MultiEchoFactory(Factory):
     def buildProtocol(self, addr):
         print "Build Protocol"
         #players arent entered into the game state until they identify
-        newPlayer = Player()
-        toReturn = MultiEcho(self, newPlayer)
-        newPlayer.Protocol = toReturn
+        toReturn = MultiEcho(self, Player())
+        toReturn.player.protocol = toReturn
         return toReturn
 
 class Bet(object):
@@ -239,7 +245,7 @@ class Bet(object):
         self.quantity = _quantity
         self.digit = _digit
 
-    def string():
+    def string(self):
         return str(self.quantity) + "+" + str(self.digit)
 
 class Player(object):
@@ -253,10 +259,7 @@ class Player(object):
     def __init__(self):
 
         #identification information
-        self.id = 0
-        self.name = ""
-        self.pushToken = ""
-
+        self.id = ""
 
         self.state = 0
         self.called = False
@@ -269,32 +272,15 @@ class GameState(object):
     #STATES:
     #0 - Not Started
     #1 - Playing
-    def __init__(self, _port):
-
-        # Stores player objects that have been id'd and thus accepted
-        self.players = []
-
-        # Stores id+name+pushtoken|id+name+pushtoken for each user
-        self.playerList = []
-
-        self.currentBet = None
-        # Stores id:serialnumber(int)
-        self.playersSerials = {}
-        self.bettingPlayer = None
-        self.currentPlayer = None
-        self.round = 1
-        #host is given ability to start game
-        self.host = None
-        self.state = 0
-        self.port = port
-
     def __init__(self, _storageFolder, _port):
-        print "New Game State"
+
+        self.storageFolder = _storageFolder
+
         # Stores player objects that have been id'd and thus accepted
         self.players = []
 
-        # Stores id+name+pushtoken|id+name+pushtoken for each user
-        self.playerList = []
+        # Stores id+name+pushtoken|id+name+pushtoken
+        self.playerList = ""
 
         self.currentBet = None
         # Stores id:serialnumber(int)
@@ -305,48 +291,51 @@ class GameState(object):
         #host is given ability to start game
         self.host = None
         self.state = 0
-        self.storageFolder = _storageFolder
-        self.port = port
+        self.port = _port
 
-    # Make sure submitted ids were invited to the game
-    def verifyID(self, idToVerify):
-        idVerified = False
-        for string in playerList:
-            existingID = string.split("+")[0]
-            if existingID.isdigit():
-                if int(existingID) == idToVerify:
-                    idVerified = True
-
-        return idVerified
-
-
-    def updateAcceptedPlayers(self, player):
-
-        for player in self.players:
-            idString = str(newID)
-            player.protocol.transport.write(generateDataString(1, idString))
-
-        self.players.append(player)
-
+    # Send the players ID to all other players so they know it has joined
+    # Send the player all IDs that have been accepted
     def updatePlayer(self, player):
+
+        print "New iD to send " + str(player.id)
+        for _player in self.players:
+            print "Player recieving ID " + str(_player.id)
+            _player.protocol.transport.write(generateDataString(1, str(player.id)))
+
+        #then send all the accepted ids to be cross referened
+        for _player in self.players:
+            player.protocol.transport.write(generateDataString(1, str(_player.id)))
 
         # add player to players
         self.players.append(player)
 
         # if the player is the first player in the party make it the host
-        if len(self.players.count) == 1:
+        if len(self.players) == 1:
             self.host = player
             return
+            
+        else:
+            # write a list of all the player strings to the new player
+            player.protocol.transport.write(generateDataString(0, self.playerList))
 
-        # write a list of all the player strings to the new player
-        playerString = "|".join(self.gameState.playerList)
-        player.protocol.transport.write(generateDataString(0, playerString))
+    # Write player tokens to a json file
+    # Call a ruby script to send the notifications
+    def sendNotification(self, tokens):
 
-        #then send all the accepted ids to be cross referened
-        for player in players:
-            player.protocol.transport.write(generateDataString(1, str(player.id)))
+        # opens the configuration file and fetches the data in it
+        #with open('config.json') as json_data_file:
+            #configData = json.load(json_data_file)
 
+        #with open(self.storageFolder + "/players.json", 'w') as outfile:
+           #data = {'deviceTokens' : tokens}
+            #json.dump(data, outfile)
+  
+        print "Data Dump"
+        #import subprocess
+        #print "ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json"
+        #subprocess.call("ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json", shell=True)
 
+    # Send bet from player
     def sendBet(self, bet, betPlayer):
         self.currentBet = bet
         betString = bet.string()
@@ -355,23 +344,30 @@ class GameState(object):
                 player.protocol.transport.write(generateDataString(4, betString))
         self.incrementTurn()
 
+    # Send call from player
     def sendCall(self, callPlayer):
         for player in self.players:
             if player != callPlayer:
-                player.protocol.transport.write(generateDollar(5, "CALL"))
+                player.protocol.transport.write(generateDataString(5, "CALL"))
 
         self.incrementTurn()
 
+    # Send new dollars to all players
     def sendNewDollars(self):
         self.playersSerials = {}
         for player in self.players:
-            newDollar = self.generateDollar
+            newDollar = self.generateDollar()
             self.playersSerials[str(player.id)] = newDollar
-
-        playerSerialsString = '|'.join(['%s+%s' % (key, value) for (key, value) in stringOfIDs.items()])
+        # SEND SERIAL NUMBERS TO players
+        arrayOfStrings = []
+        for (key, value) in self.playersSerials.iteritems():
+            string = '%s+%s' % (key, str(value))
+            arrayOfStrings.append(string)
+        playerSerialsString = '|'.join(arrayOfStrings)
         for player in self.players:
             player.protocol.transport.write(generateDataString(6, playerSerialsString))
 
+    # Tidy up after the round, prepare for the next
     def getRoundResult(self):
 
         self.round = self.round + 1
@@ -380,36 +376,29 @@ class GameState(object):
 
         self.sendNewDollars()
 
-        # ALL THAT needs to happen here is changing the api values
-
-        #occurances = 0
-        #digit = str(self.currentBet.digit)
-
-        #for playerID, dollar in playersSerials.iteritems():
-            #dollarString = str(dollar)
-            #occurances += dollarString.count(digit)
-
-        #if occurances >= self.currentBet.number:
-            #the better wins
-            #for player in self.players:
-                #if player == bettingPlayer:
-                    #player.protocol.transport.write("7::3::WIN")
-
-    def incrementTurn():
+    # Updates the current player
+    # Checks if the round is over
+    def incrementTurn(self):
 
         if self.players.index(self.currentPlayer) == len(self.players) - 1:
-            self.players.currentPlayer = self.players[0]
+            self.currentPlayer = self.players[0]
         else:
-            self.players.currentPlayer = self.players[self.players.index(self.currentPlayer) + 1]
+            self.currentPlayer = self.players[self.players.index(self.currentPlayer) + 1]
 
         if self.bettingPlayer == self.currentPlayer:
             #the round has been played through and we can evaluate the result
             self.getRoundResult()
 
-    def generateDollar():
-        return randint(0, 10000000)
+    # Generates an 8 digit serial number
+    def generateDollar(self):
+        dollar = ""
+        for i in xrange(8):
+            dollar += str(randint(0, 9))
 
-    def beginGame():
+        return "L" + dollar + "P"
+
+    # Begins the game
+    def beginGame(self):
 
         print "Begin Game"
 
@@ -418,33 +407,43 @@ class GameState(object):
 
         # RANDOMIZE ORDER OF GAME
 
+        print "Self Player To Arrange " + str(tempPlayers)
+
         #loop until the entire array is filled
-        while len(orderedArray) != len(self.players):
+        while len(tempPlayers) > 0:
             #generate a random int from the remaining indexes
-            index = randint(0, len(tempPlayers - 1))
+            print "Player Length " + str(len(tempPlayers))
+            index = randint(0, len(tempPlayers) - 1)
             #add random player to array
-            orderedArray.append(tempPlayers[id])
+            orderedArray.append(tempPlayers[index])
             del tempPlayers[index]
 
-        self.players = tempPlayers
+        self.players = orderedArray
 
         # get current player
         self.currentPlayer = self.players[0]
 
         # SEND IDS TO players
         stringOfIDs = ""
+        arrayOfIDs = []
         for player in self.players:
-            stringOfIDs += str(player.id) + "|"
+            arrayOfIDs.append(str(player.id))
+        stringOfIDs = "|".join(arrayOfIDs)
 
+        print "IDs " + stringOfIDs
         for player in self.players:
-            newDollar = self.generateDollar
+            newDollar = self.generateDollar()
             self.playersSerials[str(player.id)] = newDollar
             player.protocol.transport.write(generateDataString(3, stringOfIDs))
-
+        print(self.playersSerials)
         # SEND SERIAL NUMBERS TO players
         arrayOfStrings = []
         for (key, value) in self.playersSerials.iteritems():
-            arrayOfStrings += '%s+%s' % (key, value)
+            string = '%s+%s' % (key, str(value))
+            arrayOfStrings.append(string)
+            print string
+            print arrayOfStrings
+        print "STrings" + str(arrayOfStrings)
         playerSerialsString = '|'.join(arrayOfStrings)
         for player in self.players:
             player.protocol.transport.write(generateDataString(6, playerSerialsString))

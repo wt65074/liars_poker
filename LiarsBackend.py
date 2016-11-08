@@ -31,11 +31,13 @@ def generateDataString(dataType, data):
     return lengthString + contentString
 
 class MultiEcho(Protocol):
+
     def __init__(self, factory, player):
         print("New Protocol")
         self.factory = factory
         self.player = player
-        self.inputBuffer = ""
+        self.inputBuffer = 
+
     def connectionMade(self):
         print("New connection")
         if self.factory.gameState.state != 0:
@@ -45,14 +47,18 @@ class MultiEcho(Protocol):
 
             self.transport.loseConnection()
             return
+
     def handleData(self, dataType, data):
 
         #TYPES
+        #0 - notification
         #1 - players
         #2 - id
         #3 - host instruction
         #4 - move
+
         print "ID" + str(self.player.id) + "Handle Data " + str(dataType) + " " + data
+
         # If the player is not the current player and the game has started return
         # The players have no data if it is not their turn except their identification
         if self.factory.gameState.currentPlayer != self.player and self.factory.gameState.state != 0:
@@ -68,8 +74,17 @@ class MultiEcho(Protocol):
             print "worng"
             return
 
+        # TOKENS TO SEND NOTIFICATION TO ---------
+        # Expecting to recived token|token|token
+        if dataType == 0:
+
+            tokens = []
+            for string in data.split("|"):
+
+            print "Send data"
+
         # INVITED PLAYER LIST ------------------
-        # Player identification list is recieved in the form id+name+pushtoken|id+name+pushtoken
+        # Player identification list is recieved in the form id+name+username|id+name+username
         if dataType == 1:
 
             print "Player ID List recieved"
@@ -78,13 +93,14 @@ class MultiEcho(Protocol):
 
             #id+name+pushtoken|id+name+pushtoken
             for string in data.split("|"):
+
                 # Save entire identification string
                 self.factory.gameState.playerList.append(string)
 
 
 
                 # Forward the deviceTokens so the json can be dumped
-                #tokens += string.split("+")[2]
+                #tokens += string.split("+")[3]
             print "New Player List" + str(self.factory.gameState.playerList)
             # Save deviceTokens as json and execute push notifiations
             #self.factory.gameState.dumpPlayerDeviceTokens(tokens)

@@ -27,7 +27,8 @@ class LiarsServiceMaker(object):
 
     def makeService(self, options):
         #gameState = GameState(str(options['storage']), int(options['port']))
-        gameState = GameState(int(options['port']))
+        print options['port']
+        gameState = GameState(options['storage'], int(options['port']))
         print "Game State Init"
         factory = MultiEchoFactory(gameState)
         print "Facotry Init"

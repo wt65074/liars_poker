@@ -3,33 +3,40 @@ require 'json'
 require 'optparse'
 
 options = {}
-OptionParser.new do |opts|
+parser = OptionParser.new do |opts|
   opts.banner = "\nPush Noitification script.\n"
 
-  opts.on("-p", "--port", "Provide the port") do |u|
-    options[:port] = u
+  opts.on("-p n", "--port", "Provide the port") do |p|
+    puts p
+    options[:port] = p
   end
 
-  opts.on("-j", "--json", "Path to JSON file with tokens") do |d|
-    options[:json] = d
+  opts.on("-j n", "--json", "Path to JSON file with tokens") do |j|
+    puts j
+    options[:json] = j
   end
 
   opts.on("-h", "--help", "Displays help") do
     puts opts
     exit
   end
-end.parse!
+end
 
+parser.parse!(ARGV)
+
+puts options
 if options[:json].nil?
   puts "Fatal Error: Must provide json path"
   abort
 end
 
+puts "Sending push notification"
+
 tokensFile = File.read(options[:json])
 tokens_hash = JSON.parse(tokensFile)
 tokens = tokens_hash['deviceTokens']
 
-configFile = File.read(config.json)
+configFile = File.read("config.json")
 config_hash = JSON.parse(configFile)
 pemFile = config_hash['pemFile']
 
