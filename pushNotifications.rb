@@ -42,8 +42,10 @@ pemFile = config_hash['pemFile']
 
 # Environment variables are automatically read, or can be overridden by any specified options. You can also
 # conveniently use `Houston::Client.development` or `Houston::Client.production`.
-APN = Houston::Client.development
+APN = Houston::Client.production
 APN.certificate = File.read(pemFile)
+
+puts tokens
 
 for token in tokens
 
@@ -57,6 +59,8 @@ for token in tokens
   notification.category = "INVITE_CATEGORY"
   notification.content_available = true
   notification.custom_data = {port: options[:port]}
+  
+  puts "SEND SEND SEND"
 
   # And... sent! That's all it takes.
   APN.push(notification)

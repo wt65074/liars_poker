@@ -46,8 +46,8 @@ def newGame():
     with open('config.json') as json_data_file:
         data = json.load(json_data_file)
 
-    pidfile = newFolder + "/pidfile.pid"
-    logfile = newFolder + "/logfile.log"
+    pidfile = data['storageFolder'] + "/" + newFolder + "/pidfile.pid"
+    logfile = data['storageFolder'] + "/" + newFolder + "/logfile.log"
 
     import subprocess
     origWD = os.getcwd() # remember our original working directory
@@ -55,7 +55,10 @@ def newGame():
     os.mkdir(newFolder)
     port = get_open_port()
     folder = data['storageFolder'] + "/" + newFolder
+    os.chdir('/var/liars_backend')
     subprocessCall = "twistd " + "--pidfile " + pidfile + " --logfile " + logfile + " liars -p " + str(port) + " -s " + folder
+    print subprocessCall
+    
     print subprocess.check_output(subprocessCall, shell=True)
     subprocess.call("touch " + newFolder + "/players.json", shell=True)
     os.chdir(origWD)
