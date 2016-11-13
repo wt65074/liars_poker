@@ -55,7 +55,7 @@ def newGame():
     os.mkdir(newFolder)
     port = get_open_port()
     folder = data['storageFolder'] + "/" + newFolder
-    os.chdir('/var/liars_backend')
+    os.chdir('/home/wtobey/liars_poker')
     subprocessCall = "twistd " + "--pidfile " + pidfile + " --logfile " + logfile + " liars -p " + str(port) + " -s " + folder
     print subprocessCall
     

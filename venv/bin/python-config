@@ -1,4 +1,4 @@
-#!/home/wt65074/liars_poker/venv/bin/python
+#!/home/wtobey/liars_poker/venv/bin/python
 
 import sys
 import getopt
