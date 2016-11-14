@@ -4,6 +4,7 @@ from twisted.python import log
 from random import randint
 import json
 import sys
+import numpy
 
 def generateDataString(dataType, data):
     # Takes a data type and returns a string in the format:
@@ -393,7 +394,7 @@ class GameState(object):
     def generateDollar(self):
         dollar = ""
         for i in xrange(8):
-            dollar += str(randint(0, 9))
+            dollar += str(numpy.random.randint(10))
 
         return "L" + dollar + "P"
 
