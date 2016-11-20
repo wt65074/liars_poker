@@ -315,11 +315,17 @@ class GameState(object):
         part.add_header('Content-Disposition', 'attachment; filename="logfile.log"')
 
         msg.attach(part)
-        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        server.ehlo()
-        server.login("dev.wtobey@gmail.com", "openopenopen")
-        server.sendmail("dev.wtobey@gmail.com", "dev.wtobey@gmail.com", msg.as_string())
-        server.close()
+
+        try:  
+            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            server.ehlo()
+            server.login("dev.wtobey@gmail.com", "openopenopen")
+            server.sendmail("dev.wtobey@gmail.com", "dev.wtobey@gmail.com", msg.as_string())
+            server.close()
+
+            print 'Email sent!'
+        except:  
+            print 'Something went wrong...'
 
 
     # Send the players ID to all other players so they know it has joined
