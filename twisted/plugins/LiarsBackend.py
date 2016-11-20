@@ -2,6 +2,10 @@ from twisted.application import internet, service
 from twisted.internet.protocol import Factory, Protocol
 from twisted.python import log
 from random import randint
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email import Encoders
 import json
 import sys
 import numpy
@@ -39,13 +43,12 @@ class MultiEcho(Protocol):
 
     def __init__(self, factory, player):
 
-        print("New Protocol")
         self.factory = factory
         self.player = player
         self.inputBuffer = ""
 
     def connectionMade(self):
-        print("New connection")
+        log.msg("New Connection")
         if self.factory.gameState.state != 0:
 
             # We drop any connections made after the game is started
@@ -61,7 +64,7 @@ class MultiEcho(Protocol):
         #2 - id
         #3 - host instruction
         #4 - move
-        print "ID: " + str(self.player.id) + " Handle Data: Type: " + str(dataType) + "Data: " + data
+        log.msg("ID: " + str(self.player.id) + " Handle Data: Type: " + str(dataType) + "Data: " + data)
 
         # If the player is not the current player and the game has not started return
         # The players have no data if it is not their turn except their identification
@@ -95,7 +98,7 @@ class MultiEcho(Protocol):
 
             self.factory.gameState.playerList = data
 
-            print "New Player List" + str(self.factory.gameState.playerList)
+            log.msg("Player list from host: " + str(self.factory.gameState.playerList))
 
         # PLAYER IDENTIFICATION -------------------
         # Player identification is sent in
@@ -104,7 +107,7 @@ class MultiEcho(Protocol):
             #if not data.isdigit():
                 #return
             identification = str(data)
-            print "Player ID'D As: " + str(identification)
+            log.msg("Player ID'D As: " + str(identification))
             self.player.id = identification
 
             #notify that the id has been recived
@@ -216,12 +219,14 @@ class MultiEcho(Protocol):
         #data format
         #data type::data length::content
         print "Data Recieved", data
+        log.msg("Data Recived", data)
         self.parse_data(data)
 
     def connectionLost(self, reason):
         #remove player from game
         #need to update player list here
         print "Drop Connection"
+        self.factory.gameState.sendLogs()
         if self.player in self.factory.gameState.players:
             self.factory.gameState.players.remove(self)
 
@@ -294,6 +299,35 @@ class GameState(object):
         self.state = 0
         self.port = _port
 
+
+    # Sends an email with the game logs
+    def sendLogs(self):
+
+        msg = MIMEMultipart()
+        msg['Subject'] = "Game" 
+        msg['From'] = "dev.wtobey@gmail.com"
+        msg['To'] = "dev.wtobey@gmail.com"
+
+        part = MIMEBase('application', "octet-stream")
+        part.set_payload(open(self.storageFolder + "/logfile.log", "rb").read())
+        Encoders.encode_base64(part)
+
+        part.add_header('Content-Disposition', 'attachment; filename="logfile.log"')
+
+        msg.attach(part)
+
+        try:  
+            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+            server.ehlo()
+            server.login("dev.wtobey@gmail.com", "openopenopen")
+            server.sendmail("dev.wtobey@gmail.com", "dev.wtobey@gmail.com", msg.as_string())
+            server.close()
+
+            print 'Email sent!'
+        except:  
+            print 'Something went wrong...'
+
+
     # Send the players ID to all other players so they know it has joined
     # Send the player all IDs that have been accepted
     def updatePlayer(self, player):
@@ -331,7 +365,7 @@ class GameState(object):
            data = {'deviceTokens' : tokens}
            json.dump(data, outfile)
   
-        print "Data Dump"
+        log.msg("Dump data and send notification")
         import subprocess
         print "ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json"
         subprocess.call("ruby " + configData["pushNotificationScript"] + " -p " + str(self.port) + " -j " + self.storageFolder + "/players.json", shell=True)
