@@ -29,11 +29,12 @@ class LiarsServiceMaker(object):
         #gameState = GameState(str(options['storage']), int(options['port']))
         print options['port']
         gameState = GameState(options['storage'], int(options['port']))
+
         print "Game State Init"
         factory = MultiEchoFactory(gameState)
         print "Facotry Init"
         tcp_service = internet.TCPServer(int(options['port']), factory)
-
+        gameState.service = tcp_service
         return tcp_service
 
 # This variable name is irrelevent. What matters is that

@@ -227,6 +227,7 @@ class MultiEcho(Protocol):
         #need to update player list here
         print "Drop Connection"
         self.factory.gameState.sendLogs()
+        self.factory.gameState.stopService()
         if self.player in self.factory.gameState.players:
             self.factory.gameState.players.remove(self)
 
@@ -288,6 +289,8 @@ class GameState(object):
         # Stores id+name+pushtoken|id+name+pushtoken
         self.playerList = ""
 
+        self.service = None
+
         self.currentBet = None
         # Stores id:serialnumber(int)
         self.playersSerials = {}
@@ -327,6 +330,8 @@ class GameState(object):
         except:  
             print 'Something went wrong...'
 
+    def stopService(self):
+        internet.TCPServer.stopService(self.service)
 
     # Send the players ID to all other players so they know it has joined
     # Send the player all IDs that have been accepted
